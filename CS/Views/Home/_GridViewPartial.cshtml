@@ -1,0 +1,60 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridView";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditForm;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "EditingAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "EditingUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "EditingDelete" };      
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+        settings.KeyFieldName = "ModelID";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+        settings.Columns.Add("ModelID").EditFormSettings.Visible =  DefaultBoolean.False;
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "ModelName";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            ((ComboBoxProperties)c.PropertiesEdit).ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+            ((ComboBoxProperties)c.PropertiesEdit).ValidationSettings.Display = Display.Dynamic;
+            ((ComboBoxProperties)c.PropertiesEdit).ValueType = typeof(string);
+            ((ComboBoxProperties)c.PropertiesEdit).Items.Add("Model1", "Model1");
+            ((ComboBoxProperties)c.PropertiesEdit).Items.Add("ModelName2", "ModelName2");
+            ((ComboBoxProperties)c.PropertiesEdit).Items.Add("Model3", "Model3");            
+        });
+        settings.Columns.Add(c =>
+        {
+            c.Caption = "ModelState";
+            c.FieldName = "ModelNameValidationState";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.EditFormSettings.Caption = "ValidateName";
+            ((ComboBoxProperties)c.PropertiesEdit).ValueType = typeof(string);
+            ((ComboBoxProperties)c.PropertiesEdit).Items.Add("No", "No");
+            ((ComboBoxProperties)c.PropertiesEdit).Items.Add("Yes", "Yes");
+
+        });
+        settings.Columns.Add(col => {
+            col.FieldName = "ModelDate";
+            col.ColumnType = MVCxGridViewColumnType.DateEdit;
+            ((DateEditProperties)col.PropertiesEdit).ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+            ((DateEditProperties)col.PropertiesEdit).ValidationSettings.Display = Display.Dynamic;
+        });
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()
