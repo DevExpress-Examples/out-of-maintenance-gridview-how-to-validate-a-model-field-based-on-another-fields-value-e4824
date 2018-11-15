@@ -1,3 +1,12 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [CustomAttribute.cs](./CS/App_Code/CustomAttribute.cs) (VB: [CustomAttribute.vb](./VB/App_Code/CustomAttribute.vb))
+* [HomeController.cs](./CS/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/Controllers/HomeController.vb))
+* [MyModel.cs](./CS/Models/MyModel.cs) (VB: [MyModel.vb](./VB/Models/MyModel.vb))
+* [_GridViewPartial.cshtml](./CS/Views/Home/_GridViewPartial.cshtml)
+* [Index.cshtml](./CS/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # GridView - How to validate a model field based on another field's value
 
 
