@@ -1,3 +1,13 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [CustomAttribute.cs](./CS/App_Code/CustomAttribute.cs) (VB: [CustomAttribute.vb](./VB/App_Code/CustomAttribute.vb))
+* [HomeController.cs](./CS/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/Controllers/HomeController.vb))
+* [Global.asax](./CS/Global.asax) (VB: [Global.asax.vb](./VB/Global.asax.vb))
+* [Global.asax.cs](./CS/Global.asax.cs) (VB: [Global.asax.vb](./VB/Global.asax.vb))
+* [MyModel.cs](./CS/Models/MyModel.cs) (VB: [MyModel.vb](./VB/Models/MyModel.vb))
+* [AjaxLogin.js](./CS/Scripts/AjaxLogin.js) (VB: [AjaxLogin.js](./VB/Scripts/AjaxLogin.js))
+<!-- default file list end -->
 # GridView - How to validate a model field based on another field's value
 
 
