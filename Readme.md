@@ -9,7 +9,7 @@
 <!-- default file list end -->
 # GridView - How to validate a model field based on another field's value
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e4824)**
+**[[Run Online]](https://codecentral.devexpress.com/e4824/)**
 <!-- run online end -->
 
 
